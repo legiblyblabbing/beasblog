@@ -7,6 +7,7 @@
     <title>{{ title }}</title>
     <link href="/css/tailwind.css" rel="stylesheet">
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <nav class="flex justify-between md:flex bg-gradient-to-r from-pink-400 space-x-10 px-4 py-6 sm:px-6 sm:justify-center md:space-x-10">
@@ -26,6 +27,17 @@
 
 <body>
 {{ content | safe }}
+<script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                });
+            }
+        });
+    }
+</script>
 </body>
 
 <footer class="bg-gradient-to-r from-pink-400">

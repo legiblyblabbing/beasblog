@@ -4,4 +4,7 @@ module.exports = function(eleventyConfig) {
         // Optional, default is "---"
         excerpt_separator: "<!-- excerpt -->"
     });
+    eleventyConfig.setTemplateFormats([
+        "yml",
+    ]);
 };
