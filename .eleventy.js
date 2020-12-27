@@ -5,6 +5,11 @@ module.exports = function(eleventyConfig) {
         excerpt_separator: "<!-- excerpt -->"
     });
     eleventyConfig.setTemplateFormats([
+        "html",
+        "md",
+        "njk",
         "yml",
+        "jpg",
+        "png",
     ]);
 };
